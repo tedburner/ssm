@@ -24,7 +24,6 @@
         <!-- 获取连接最大等待时间 -->
         <property name="maxWait" value="60000" />
 
-
         <property name="validationQuery"><value>SELECT 1</value></property>
         <property name="testOnBorrow" value="false" />
         <property name="testOnReturn" value="false" />
@@ -59,7 +58,7 @@
 
     <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.example.project.persist" />
+        <property name="basePackage" value="com.ssm.persist" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
     </bean>
 
