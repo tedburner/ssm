@@ -1,2 +1,2 @@
 # ssm
-Spring + SpringMVC + MyBatis
+Spring + SpringMVC + MyBatis。
