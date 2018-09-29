@@ -4,8 +4,4 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
-    <properties>
-        <property name="mapperLocations" value="classpath:com/ssm/persist/*.xml"/>
-    </properties>
-
 </configuration>  

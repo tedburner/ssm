@@ -50,7 +50,9 @@
         <!-- 数据库连接池 -->
         <property name="dataSource" ref="dataSource" />
         <!-- 加载mybatis的全局配置文件 -->
-        <property name="configLocation" value="classpath:mybatis-config.xml" />
+        <!--<property name="configLocation" value="classpath:mybatis-config.xml" />-->
+
+        <property name="mapperLocations" value="classpath:com/ssm/persist/*.xml"/>
     </bean>
 
     <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
