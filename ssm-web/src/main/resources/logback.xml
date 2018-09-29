@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                <![CDATA[%n%-4r [%d{yyyy-MM-dd HH:mm:ss.SSS} %X{productionMode}] - %X{method} %X{requestURIWithQueryString} %n  %-5level %logger{35} - %m%n]]></pattern>
+        </encoder>
+    </appender>
+
+    <!-- 打印sql日志 -->
+    <logger name="com.ssm.service" level="DEBUG"/>
+
+    <root level="INFO">
+        <appender-ref ref="Console"/>
+        <!--<appender-ref ref="FILE" />-->
+    </root>
+</configuration>
