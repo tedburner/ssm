@@ -12,6 +12,8 @@
         <module>ssm-persist</module>
         <module>ssm-model</module>
         <module>ssm-web</module>
+        <module>ssm-common</module>
+        <module>ssm-web</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -196,6 +198,11 @@
                 <artifactId>ssm-service</artifactId>
                 <version>${ssm.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.ssm</groupId>
+                <artifactId>ssm-persist</artifactId>
+                <version>${ssm.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -203,6 +210,7 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
                     <source>1.8</source>
