@@ -8,12 +8,11 @@
     <artifactId>ssm</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
+        <module>ssm-web</module>
         <module>ssm-service</module>
         <module>ssm-persist</module>
         <module>ssm-model</module>
-        <module>ssm-web</module>
         <module>ssm-common</module>
-        <module>ssm-web</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -28,6 +27,27 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.ssm</groupId>
+                <artifactId>ssm-model</artifactId>
+                <version>${ssm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ssm</groupId>
+                <artifactId>ssm-service</artifactId>
+                <version>${ssm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ssm</groupId>
+                <artifactId>ssm-persist</artifactId>
+                <version>${ssm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ssm</groupId>
+                <artifactId>ssm-common</artifactId>
+                <version>${ssm.version}</version>
+            </dependency>
+
             <!--spring-->
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -186,22 +206,6 @@
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper</artifactId>
                 <version>5.1.2</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.ssm</groupId>
-                <artifactId>ssm-model</artifactId>
-                <version>${ssm.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ssm</groupId>
-                <artifactId>ssm-service</artifactId>
-                <version>${ssm.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ssm</groupId>
-                <artifactId>ssm-persist</artifactId>
-                <version>${ssm.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

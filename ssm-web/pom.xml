@@ -17,6 +17,47 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.ssm</groupId>
+            <artifactId>ssm-service</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ssm</groupId>
+            <artifactId>ssm-model</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ssm</groupId>
+            <artifactId>ssm-persist</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
 
     </dependencies>
 
