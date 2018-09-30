@@ -13,6 +13,7 @@
         <module>ssm-persist</module>
         <module>ssm-model</module>
         <module>ssm-common</module>
+        <module>ssm-web</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -132,6 +133,11 @@
                 <artifactId>mybatis-spring</artifactId>
                 <version>1.3.2</version>
             </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-typehandlers-jsr310</artifactId>
+                <version>1.0.1</version>
+            </dependency>
 
             <!--工具类-->
             <dependency>
@@ -207,6 +213,7 @@
                 <artifactId>pagehelper</artifactId>
                 <version>5.1.2</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 
