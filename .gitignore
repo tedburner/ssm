@@ -27,4 +27,9 @@ hs_err_pid*
 
 .idea
 *iml
+/ssm-persist/target
+/ssm-common/target
+/ssm-model/target
+/ssm-service/target/
+ssm-web/target
 
