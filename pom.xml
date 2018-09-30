@@ -13,7 +13,6 @@
         <module>ssm-persist</module>
         <module>ssm-model</module>
         <module>ssm-common</module>
-        <module>ssm-web</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -117,12 +116,6 @@
             </dependency>
 
             <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>fastjson</artifactId>
-                <version>1.2.47</version>
-            </dependency>
-
-            <dependency>
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis</artifactId>
                 <version>3.4.6</version>
@@ -150,6 +143,17 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>1.18.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.47</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-mapper-asl</artifactId>
+                <version>1.9.13</version>
             </dependency>
 
             <!--google工具类-->
@@ -181,6 +185,11 @@
                 <version>3.7</version>
             </dependency>
 
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>1.3.1</version>
+            </dependency>
             <!-- log -->
             <dependency>
                 <groupId>org.slf4j</groupId>
