@@ -77,7 +77,7 @@
 
     <!-- scan for mappers and let them be autowired -->
     <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.ssm.service"/>
+        <property name="basePackage" value="com.ssm.persist"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
     </bean>
 

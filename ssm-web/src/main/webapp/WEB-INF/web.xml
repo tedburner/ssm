@@ -24,6 +24,7 @@
             <param-value>true</param-value>
         </init-param>
     </filter>
+
     <!--编码映射拦截-->
     <filter-mapping>
         <filter-name>characterEncoding</filter-name>

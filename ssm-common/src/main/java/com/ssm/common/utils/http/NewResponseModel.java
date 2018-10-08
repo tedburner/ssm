@@ -100,4 +100,14 @@ public class NewResponseModel<T> implements Serializable {
     public void setTimeStamp(long timeStamp) {
         this.timeStamp = timeStamp;
     }
+
+    @Override
+    public String toString() {
+        return "NewResponseModel{" +
+                "status=" + status +
+                ", info='" + info + '\'' +
+                ", data=" + data +
+                ", timeStamp=" + timeStamp +
+                '}';
+    }
 }
