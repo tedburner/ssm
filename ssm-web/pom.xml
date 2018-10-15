@@ -21,18 +21,6 @@
             <groupId>com.ssm</groupId>
             <artifactId>ssm-service</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.ssm</groupId>
-            <artifactId>ssm-model</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.ssm</groupId>
-            <artifactId>ssm-persist</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.ssm</groupId>
-            <artifactId>ssm-common</artifactId>
-        </dependency>
 
         <!--spring-->
         <dependency>

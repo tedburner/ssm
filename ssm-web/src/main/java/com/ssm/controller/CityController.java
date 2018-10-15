@@ -1,6 +1,7 @@
 package com.ssm.controller;
 
 import com.ssm.common.utils.http.NewResponseModel;
+import com.ssm.model.DO.CityDO;
 import com.ssm.service.CityService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
