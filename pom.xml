@@ -22,7 +22,6 @@
         <java.version>1.8</java.version>
         <skipTests>true</skipTests>
         <spring.version>5.0.8.RELEASE</spring.version>
-        <ssm.version>1.0-SNAPSHOT</ssm.version>
     </properties>
 
     <dependencyManagement>
@@ -30,22 +29,22 @@
             <dependency>
                 <groupId>com.ssm</groupId>
                 <artifactId>ssm-model</artifactId>
-                <version>${ssm.version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.ssm</groupId>
                 <artifactId>ssm-service</artifactId>
-                <version>${ssm.version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.ssm</groupId>
                 <artifactId>ssm-persist</artifactId>
-                <version>${ssm.version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.ssm</groupId>
                 <artifactId>ssm-common</artifactId>
-                <version>${ssm.version}</version>
+                <version>${project.version}</version>
             </dependency>
 
             <!--spring-->
@@ -95,11 +94,12 @@
                 <version>${spring.version}</version>
             </dependency>
 
-            <!--junit 单测-->
+            <!--junit 单测 scope 表示依赖范围，test作用域是测试类，如果是主代码中就会编译出问题-->
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>4.12</version>
+                <scope>test</scope>
             </dependency>
 
             <!--数据库相关-->
