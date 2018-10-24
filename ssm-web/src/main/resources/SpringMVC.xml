@@ -11,6 +11,7 @@
        http://www.springframework.org/schema/context/spring-context.xsd">
 
     <mvc:annotation-driven/>
+
     <!-- 扫描所有的controller 但是不扫描service -->
     <context:component-scan base-package="com.ssm.controller">
         <context:include-filter type="annotation"
@@ -20,7 +21,7 @@
 
     </context:component-scan>
 
-    <!--视图-->
+    <!-- 定义跳转的文件的前后缀 ，视图模式配置-->
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.UrlBasedViewResolver">
         <property name="viewClass"

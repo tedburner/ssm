@@ -23,7 +23,7 @@ public class CityController {
     @Autowired
     private CityService cityService;
 
-    @RequestMapping(value = "getCityByProvinceId")
+    @RequestMapping(value = "getCity}")
     public NewResponseModel getCity(@RequestParam("provinceId") Long provinceId) {
         NewResponseModel responseModel = NewResponseModel.Success();
         responseModel.setData(cityService.findCityList(provinceId));
