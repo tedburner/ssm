@@ -7,7 +7,7 @@
     <!-- 使用disconf必须添加以下配置 -->
     <bean id="disconfMgrBean" class="com.baidu.disconf.client.DisconfMgrBean"
           destroy-method="destroy">
-        <property name="scanPackage" value=""/>
+        <property name="scanPackage" value="com.ssm"/>
 
     </bean>
     <bean id="disconfMgrBeanSecond" class="com.baidu.disconf.client.DisconfMgrBeanSecond"
