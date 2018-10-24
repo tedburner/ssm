@@ -174,7 +174,36 @@
                 </configuration>
             </plugin>
         </plugins>
-    </build>
 
+        <filters>
+            <filter>${basedir}/src/main/resources/env/${filters.env}/disconf.properties</filter>
+        </filters>
+    </build>
+    <!--Maven Profile-->
+    <profiles>
+        <profile>
+            <id>test</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <filters.env>test</filters.env>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>dev</id>
+            <properties>
+                <filters.env>dev</filters.env>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>production</id>
+            <properties>
+                <filters.env>production</filters.env>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>

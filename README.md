@@ -1,4 +1,4 @@
-# ssm
+# SSM
 Spring + SpringMVC + MyBatis。
 
 ## 项目结构简介
@@ -9,7 +9,7 @@ Spring + SpringMVC + MyBatis。
 - ssm-web:控制层，项目配置信息等都在这一层。
 
 ## Thanks
-- mybatis-generator:一个mybatis生成实体类，SQL的插件，感觉还不错，
+- mybatis-generator：一个mybatis生成实体类，SQL的插件，感觉还不错，
 不过该插件不支持MySQL8，需要自己去修改源码生成新的插件。
 
 
