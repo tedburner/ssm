@@ -1,6 +1,6 @@
 package com.ssm.test;
 
-import com.ssm.service.CityService;
+import com.ssm.service.AddressService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -12,10 +12,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class ApplicationTest extends BaseTest {
 
     @Autowired
-    private CityService cityService;
+    private AddressService addressService;
 
     @Test
     public void findCityTest() {
-        System.out.println(cityService.findCityList(2L));
+        System.out.println(addressService.findCityList(2L));
     }
 }

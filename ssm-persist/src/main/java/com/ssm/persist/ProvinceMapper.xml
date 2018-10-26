@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.persist.ProvinceMapper">
+
+    <sql id="Base_Column_List">
+        id, name, status, createTime, updateTime
+    </sql>
+
+    <insert id="addProvince" parameterType="com.ssm.model.DO.ProvinceDO"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO  city (id,name)
+        VALUE (#{id}, #{name})
+    </insert>
+
+    <select id="selectByName" resultType="com.ssm.model.DO.ProvinceDO">
+        select
+        <include refid="Base_Column_List"/>
+        from province
+        where name = #{name} and status = 1
+    </select>
+
+    <select id="selectById" resultType="com.ssm.model.DO.ProvinceDO">
+        select
+        <include refid="Base_Column_List"/>
+        from province
+        where id = #{id} and status = 1
+    </select>
+
+    <select id="selectProvince" resultType="com.ssm.model.DO.ProvinceDO">
+        select
+        <include refid="Base_Column_List"/>
+        from province
+        WHERE status = 1
+    </select>
+</mapper>

@@ -16,20 +16,20 @@
         select
         <include refid="Base_Column_List"/>
         from city
-        where name = #{cityName}
+        where name = #{cityName}  and status = 1
     </select>
 
     <select id="selectById" resultType="com.ssm.model.DO.CityDO">
         select
         <include refid="Base_Column_List"/>
         from city
-        where id = #{id}
+        where id = #{id} and status  = 1
     </select>
 
     <select id="selectCityByProvinceId" resultType="com.ssm.model.DO.CityDO">
         select
         <include refid="Base_Column_List"/>
         from city
-        where provinceId = #{provinceId}
+        where provinceId = #{provinceId}  and status = 1
     </select>
 </mapper>

@@ -9,7 +9,7 @@ import java.util.List;
  * @date: 2018/9/30 14:50
  * @description:
  */
-public interface CityService {
+public interface AddressService {
 
     /**
      * 根据省份查询城市信息

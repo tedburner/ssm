@@ -10,7 +10,11 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!--开启注解-->
     <mvc:annotation-driven/>
+
+    <!--访问静态资源-->
+    <mvc:default-servlet-handler/>
 
     <!-- 扫描所有的controller 但是不扫描service -->
     <context:component-scan base-package="com.ssm.controller">
@@ -22,18 +26,12 @@
     </context:component-scan>
 
     <!-- 定义跳转的文件的前后缀 ，视图模式配置-->
-    <bean id="viewResolver"
-          class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
         <property name="viewClass"
                   value="org.springframework.web.servlet.view.JstlView"/>
-        <property name="prefix" value="/jsp/"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-
-    <!--拦截-->
-    <!--<mvc:interceptors>-->
-    <!--<bean class=""></bean>-->
-    <!--</mvc:interceptors>-->
 
     <!--文件上传配置-->
     <bean id="multipartResolver"

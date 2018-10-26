@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.persist.UserMapper">
+
+    <sql id="columns">
+        id, name, age, password, card, phone, status, createTime, updateTime
+    </sql>
+
+    <insert id="save" parameterType="com.ssm.model.DO.UserDO">
+        insert into user (name, age, password, createTime, updateTime, card, phone)
+        values (#{name}, #{age}, #{password}, #{createTime}, #{updateTime}, #{card}, #{phone})
+    </insert>
+    <select id="selectAll" resultType="com.ssm.model.DO.UserDO">
+        select
+        <include refid="columns"/>
+        from user
+        where status = 1
+    </select>
+
+    <select id="selectById" resultType="com.ssm.model.DO.UserDO">
+        select
+        <include refid="columns"/>
+        from user
+        where status = 1 and id = #{id}
+    </select>
+
+</mapper>
