@@ -171,7 +171,6 @@
             <artifactId>disconf-client</artifactId>
             <version>${disconf.version}</version>
         </dependency>
-
     </dependencies>
 
     <build>
