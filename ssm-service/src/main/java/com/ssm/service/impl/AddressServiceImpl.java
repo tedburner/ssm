@@ -1,7 +1,9 @@
 package com.ssm.service.impl;
 
 import com.ssm.model.DO.CityDO;
+import com.ssm.model.DO.ProvinceDO;
 import com.ssm.persist.CityMapper;
+import com.ssm.persist.ProvinceMapper;
 import com.ssm.service.AddressService;
 import org.springframework.stereotype.Service;
 
@@ -19,10 +21,17 @@ public class AddressServiceImpl implements AddressService {
 
     @Resource
     private CityMapper cityMapper;
+    @Resource
+    private ProvinceMapper provinceMapper;
 
 
     @Override
     public List<CityDO> findCityList(Long provinceId) {
         return cityMapper.selectCityByProvinceId(provinceId);
+    }
+
+    @Override
+    public List<ProvinceDO> findProvinceList() {
+        return provinceMapper.selectProvince();
     }
 }

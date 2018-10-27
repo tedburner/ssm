@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ssm.persist.ProvinceMapper">
 
-    <sql id="Base_Column_List">
+    <sql id="columns">
         id, name, status, createTime, updateTime
     </sql>
 
@@ -14,21 +14,21 @@
 
     <select id="selectByName" resultType="com.ssm.model.DO.ProvinceDO">
         select
-        <include refid="Base_Column_List"/>
+        <include refid="columns"/>
         from province
         where name = #{name} and status = 1
     </select>
 
     <select id="selectById" resultType="com.ssm.model.DO.ProvinceDO">
         select
-        <include refid="Base_Column_List"/>
+        <include refid="columns"/>
         from province
         where id = #{id} and status = 1
     </select>
 
     <select id="selectProvince" resultType="com.ssm.model.DO.ProvinceDO">
         select
-        <include refid="Base_Column_List"/>
+        <include refid="columns"/>
         from province
         WHERE status = 1
     </select>

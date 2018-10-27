@@ -22,8 +22,17 @@ public class AddressController {
     @Autowired
     private AddressService addressService;
 
+
+    @RequestMapping(value = "getProvince", method = RequestMethod.GET)
+    public NewResponseModel getProvince() {
+        NewResponseModel responseModel = NewResponseModel.Success();
+        responseModel.setData(addressService.findProvinceList());
+        log.info("NewResponseModel:" + responseModel);
+        return responseModel;
+    }
+
     @RequestMapping(value = "getCity", method = RequestMethod.GET)
-    public NewResponseModel getCity(@RequestParam("provinceId") Long provinceId) {
+    public NewResponseModel getCity(Long provinceId) {
         NewResponseModel responseModel = NewResponseModel.Success();
         responseModel.setData(addressService.findCityList(provinceId));
         log.info("NewResponseModel:" + responseModel);
