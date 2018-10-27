@@ -16,7 +16,7 @@ public interface ProvinceMapper {
     /**
      * 添加省份信息
      */
-    Long addProvince(ProvinceDO provinceDO);
+    Long addProvince(String name);
 
     /**
      * 根据省份名称，查询声明

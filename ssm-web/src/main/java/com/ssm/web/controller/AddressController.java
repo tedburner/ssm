@@ -1,12 +1,14 @@
-package com.ssm.controller;
+package com.ssm.web.controller;
 
 import com.ssm.common.utils.http.NewResponseModel;
+import com.ssm.model.dto.AddressDTO;
 import com.ssm.service.AddressService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -36,6 +38,20 @@ public class AddressController {
         NewResponseModel responseModel = NewResponseModel.Success();
         responseModel.setData(addressService.findCityList(provinceId));
         log.info("NewResponseModel:" + responseModel);
+        return responseModel;
+    }
+
+    @PostMapping("addProvince")
+    public NewResponseModel addProvince(@RequestBody AddressDTO address) {
+        NewResponseModel responseModel = NewResponseModel.Success();
+        addressService.addProvince(address.getName());
+        return responseModel;
+    }
+
+    @PostMapping("addCity")
+    public NewResponseModel addCity(@RequestBody AddressDTO address) {
+        NewResponseModel responseModel = NewResponseModel.Success();
+        addressService.saveCity(address);
         return responseModel;
     }
 }

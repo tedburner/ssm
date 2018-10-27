@@ -17,7 +17,7 @@
     <mvc:default-servlet-handler/>
 
     <!-- 扫描所有的controller 但是不扫描service -->
-    <context:component-scan base-package="com.ssm.controller">
+    <context:component-scan base-package="com.ssm.web">
         <context:include-filter type="annotation"
                                 expression="org.springframework.stereotype.Controller"/>
         <context:exclude-filter type="annotation"

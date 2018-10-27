@@ -6,10 +6,8 @@
         id, name, status, createTime, updateTime
     </sql>
 
-    <insert id="addProvince" parameterType="com.ssm.model.DO.ProvinceDO"
-            useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO  city (id,name)
-        VALUE (#{id}, #{name})
+    <insert id="addProvince" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO  province (name) VALUE (#{name})
     </insert>
 
     <select id="selectByName" resultType="com.ssm.model.DO.ProvinceDO">

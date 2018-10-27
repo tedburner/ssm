@@ -8,8 +8,8 @@
 
     <insert id="addCity" parameterType="com.ssm.model.DO.CityDO"
             useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO  city (id,provinceId,name,description)
-        VALUE (#{id},#{provinceId},#{name},#{description})
+        INSERT INTO  city (provinceId,name,description)
+        VALUE (#{provinceId},#{name},#{description})
     </insert>
 
     <select id="selectByName" resultType="com.ssm.model.DO.CityDO">

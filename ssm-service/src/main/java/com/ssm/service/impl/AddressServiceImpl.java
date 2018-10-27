@@ -2,6 +2,7 @@ package com.ssm.service.impl;
 
 import com.ssm.model.DO.CityDO;
 import com.ssm.model.DO.ProvinceDO;
+import com.ssm.model.dto.AddressDTO;
 import com.ssm.persist.CityMapper;
 import com.ssm.persist.ProvinceMapper;
 import com.ssm.service.AddressService;
@@ -33,5 +34,20 @@ public class AddressServiceImpl implements AddressService {
     @Override
     public List<ProvinceDO> findProvinceList() {
         return provinceMapper.selectProvince();
+    }
+
+    @Override
+    public void addProvince(String name) {
+        provinceMapper.addProvince(name);
+    }
+
+    @Override
+    public void saveCity(AddressDTO address) {
+        CityDO cityDO = CityDO.builder()
+                .name(address.getName())
+                .provinceId(address.getProvinceId())
+                .description(address.getDescription())
+                .build();
+        cityMapper.addCity(cityDO);
     }
 }

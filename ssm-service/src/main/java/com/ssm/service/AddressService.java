@@ -2,6 +2,7 @@ package com.ssm.service;
 
 import com.ssm.model.DO.CityDO;
 import com.ssm.model.DO.ProvinceDO;
+import com.ssm.model.dto.AddressDTO;
 
 import java.util.List;
 
@@ -21,6 +22,18 @@ public interface AddressService {
 
     /**
      * 查询省份信息
-     * */
+     */
     List<ProvinceDO> findProvinceList();
+
+    /**
+     * 添加省份信息
+     *
+     * @param name 省份名称
+     */
+    void addProvince(String name);
+
+    /**
+     * 添加城市信息
+     */
+    void saveCity(AddressDTO address);
 }
