@@ -94,13 +94,6 @@
             <artifactId>logback-ext-spring</artifactId>
         </dependency>
 
-        <!--百度 disconf-->
-        <dependency>
-            <groupId>com.baidu.disconf</groupId>
-            <artifactId>disconf-client</artifactId>
-            <version>${disconf.version}</version>
-        </dependency>
-
         <!--servlet-->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -111,6 +104,13 @@
         <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
+        </dependency>
+
+        <!--携程 apollo-->
+        <dependency>
+            <groupId>com.ctrip.framework.apollo</groupId>
+            <artifactId>apollo-client</artifactId>
+            <version>1.1.0</version>
         </dependency>
 
     </dependencies>
