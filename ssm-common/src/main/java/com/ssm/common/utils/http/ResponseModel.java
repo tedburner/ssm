@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * @author lingjun.jlj
  * @create 2017-11-23
- * https 数据返回包装
+ * https 数据返回包装类
  **/
 public class ResponseModel<T> implements Serializable {
     private static final long serialVersionUID = -4688208407174044501L;
