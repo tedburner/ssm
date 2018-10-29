@@ -13,11 +13,6 @@
     <artifactId>ssm-model</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-
         <!-- log -->
         <dependency>
             <groupId>org.slf4j</groupId>

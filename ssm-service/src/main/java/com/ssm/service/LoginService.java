@@ -24,4 +24,12 @@ public interface LoginService {
      * @param password 密码
      */
     ResponseModel login(String phone, String code, String password);
+
+    /**
+     * 退出登入
+     *
+     * @param token
+     * @param userId
+     */
+    void logout(String token, Long userId);
 }

@@ -1,5 +1,7 @@
 package com.ssm.common.utils.cache;
 
+import com.google.gson.Gson;
+import org.springframework.stereotype.Component;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
@@ -9,6 +11,7 @@ import redis.clients.jedis.JedisPoolConfig;
  * @date: 2018/10/27 18:43
  * @description:
  */
+@Component
 public class CacheUtils {
 
     private static JedisPool jedisPool = null;
@@ -59,7 +62,7 @@ public class CacheUtils {
      * @param key
      * @param value
      */
-    public static void set(String key, String value) {
+    public void set(String key, String value) {
         Jedis jedis = getJedis();
         jedis.set(key, value);
     }
@@ -67,29 +70,43 @@ public class CacheUtils {
     /**
      * String 插入
      *
-     * @param prefix 前缀
-     * @param args   拼接部分
-     * @param value  保存的值
+     * @param field 前缀
+     * @param key   拼接部分
+     * @param value 保存的值
      */
-    public static void set(String prefix, String args, String value) {
+    public void set(String field, String key, String value) {
         Jedis jedis = getJedis();
-        String key = prefix + args;
-        jedis.set(key, value);
+        jedis.set(rawKey(field, key), value);
     }
 
     /**
-     * String 插入
+     * String 插入,并将key的生存时间设为seconds(秒)
      *
-     * @param prefix 前缀
-     * @param args   拼接部分
-     * @param value  保存的值
-     * @param expire 过期时间
+     * @param field      前缀
+     * @param key        拼接部分
+     * @param value      保存的值
+     * @param expireTime 过期时间
      */
-    public static void set(String prefix, String args, String value, int expire) {
+    public void set(String field, String key, String value, int expireTime) {
         Jedis jedis = getJedis();
-        String key = prefix + args;
-        jedis.set(key, value);
-        jedis.expire(key, expire);
+        jedis.setex(rawKey(field, key), expireTime, value);
+        jedis.expire(key, expireTime);
+    }
+
+    /**
+     * String 插入,并将key的生存时间设为seconds(秒)
+     *
+     * @param field      前缀
+     * @param key        拼接部分
+     * @param value      保存的值
+     * @param expireTime 过期时间
+     */
+    public <T> void set(String field, String key, T value, int expireTime) {
+        Jedis jedis = getJedis();
+        Gson gson = new Gson();
+        String valueGson = gson.toJson(value);
+        jedis.setex(rawKey(field, key), expireTime, valueGson);
+        jedis.expire(key, expireTime);
     }
 
 
@@ -98,7 +115,7 @@ public class CacheUtils {
      *
      * @param key
      */
-    public static String get(String key) {
+    public String get(String key) {
         Jedis jedis = getJedis();
         return jedis.get(key);
     }
@@ -106,12 +123,58 @@ public class CacheUtils {
     /**
      * String 获取
      *
-     * @param prefix 前缀
-     * @param arg    拼接
+     * @param field 前缀
+     * @param key   拼接
      */
-    public static String get(String prefix, String arg) {
+    public String get(String field, String key) {
         Jedis jedis = getJedis();
-        String key = prefix + arg;
+        return jedis.get(rawKey(field, key));
+    }
+
+    /**
+     * 删除缓存
+     *
+     * @param key
+     */
+    public String del(String key) {
+        Jedis jedis = getJedis();
         return jedis.get(key);
+    }
+
+    /**
+     * 删除 缓存
+     *
+     * @param field 前缀
+     * @param key   拼接
+     */
+    public String del(String field, String key) {
+        Jedis jedis = getJedis();
+        return jedis.get(rawKey(field, key));
+    }
+
+    /**
+     * 获取缓存有效时间
+     *
+     * @param field 前缀
+     * @param key   拼接
+     */
+    public Long ttl(String field, String key) {
+        Jedis jedis = getJedis();
+        return jedis.ttl(rawKey(field, key));
+    }
+
+
+    /**
+     * 生成redis中存储的实际key
+     *
+     * @param namespace
+     * @param key
+     * @return
+     */
+    protected String rawKey(String namespace, String key) {
+        if (key == null || "".equals(key)) {
+            return null;
+        }
+        return namespace + "_" + key;
     }
 }
