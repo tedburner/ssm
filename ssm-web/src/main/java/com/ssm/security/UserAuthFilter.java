@@ -2,6 +2,9 @@ package com.ssm.security;
 
 import com.ssm.common.constant.Constants;
 import com.ssm.common.utils.cache.CacheUtils;
+import com.ssm.common.utils.http.ResponseCodeEnum;
+import com.ssm.common.utils.http.ResponseModel;
+import com.ssm.common.utils.http.tools.ResponseTool;
 import com.ssm.model.DO.UserDO;
 import com.ssm.persist.UserMapper;
 import org.apache.commons.lang3.StringUtils;
@@ -55,6 +58,12 @@ public class UserAuthFilter extends HandlerInterceptorAdapter {
                     }
                 }
 
+            } else if (StringUtils.isBlank(token)) {
+                ResponseModel responseModel = new ResponseModel();
+                responseModel.setStatus(ResponseCodeEnum.LOGIN_FAIL.getCode());
+                responseModel.setInfo(msg);
+                ResponseTool.writeJsonPToResponse(responseModel, response, request.getParameter("callback"));
+                return false;
             }
         }
         return super.preHandle(request, response, handler);
