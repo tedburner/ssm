@@ -7,6 +7,7 @@ import com.ssm.common.utils.http.ResponseModel;
 import com.ssm.common.utils.http.tools.ResponseTool;
 import com.ssm.model.DO.UserDO;
 import com.ssm.persist.UserMapper;
+import com.ssm.service.cache.JedisSetService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
@@ -26,6 +27,8 @@ public class UserAuthFilter extends HandlerInterceptorAdapter {
     private UserMapper userMapper;
     @Autowired
     private CacheUtils cacheUtils;
+    @Autowired
+    private JedisSetService jedisSetService;
 
     public boolean preHandle(HttpServletRequest request,
                              HttpServletResponse response,
@@ -48,7 +51,7 @@ public class UserAuthFilter extends HandlerInterceptorAdapter {
             }
 
             if (StringUtils.isNotEmpty(token)) {
-                phone = cacheUtils.get(Constants.redisUserInfo, token);
+                phone = jedisSetService.loadFPhoneForToKen(Constants.redisUserInfo, token);
 
                 if (StringUtils.isNotEmpty(phone)) {
                     UserDO userDO = userMapper.selectByPhone(phone);
