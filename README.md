@@ -1,6 +1,9 @@
 # SSM
 Spring + SpringMVC + MyBatis + Apollo。
 
+- 配置中心，整合了携程的 Apollo 配置中心。启动时如图配置
+![](/img/1540892049967.jpg)
+
 ## 项目结构简介
 - ssm-common:项目工具，存放一些项目。
 - ssm-model:model层，数据库对应的实体类，以及前端传参和返回前端参数的实体类。
