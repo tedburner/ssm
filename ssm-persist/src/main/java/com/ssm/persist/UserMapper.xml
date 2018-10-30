@@ -25,4 +25,11 @@
         where status = 1 and id = #{id}
     </select>
 
+    <select id="selectByPhone" resultType="com.ssm.model.DO.UserDO">
+        select
+        <include refid="columns"/>
+        from user
+        where status = 1 and id = #{phone}
+    </select>
+
 </mapper>

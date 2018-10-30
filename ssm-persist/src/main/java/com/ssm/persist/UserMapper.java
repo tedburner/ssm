@@ -28,4 +28,11 @@ public interface UserMapper {
      * @param id
      */
     UserDO selectById(Long id);
+
+    /**
+     * 根据手机查询用户信息
+     *
+     * @param phone
+     */
+    UserDO selectByPhone(String phone);
 }

@@ -1,6 +1,6 @@
 package com.ssm.web.controller;
 
-import com.ssm.common.utils.http.NewResponseModel;
+import com.ssm.common.utils.http.ResponseModel;
 import com.ssm.model.dto.AddressDTO;
 import com.ssm.service.AddressService;
 import lombok.extern.slf4j.Slf4j;
@@ -26,31 +26,31 @@ public class AddressController {
 
 
     @RequestMapping(value = "getProvince", method = RequestMethod.GET)
-    public NewResponseModel getProvince() {
-        NewResponseModel responseModel = NewResponseModel.Success();
+    public ResponseModel getProvince() {
+        ResponseModel responseModel = ResponseModel.Success();
         responseModel.setData(addressService.findProvinceList());
         log.info("NewResponseModel:" + responseModel);
         return responseModel;
     }
 
     @RequestMapping(value = "getCity", method = RequestMethod.GET)
-    public NewResponseModel getCity(Long provinceId) {
-        NewResponseModel responseModel = NewResponseModel.Success();
+    public ResponseModel getCity(Long provinceId) {
+        ResponseModel responseModel = ResponseModel.Success();
         responseModel.setData(addressService.findCityList(provinceId));
         log.info("NewResponseModel:" + responseModel);
         return responseModel;
     }
 
     @PostMapping("addProvince")
-    public NewResponseModel addProvince(@RequestBody AddressDTO address) {
-        NewResponseModel responseModel = NewResponseModel.Success();
+    public ResponseModel addProvince(@RequestBody AddressDTO address) {
+        ResponseModel responseModel = ResponseModel.Success();
         addressService.addProvince(address.getName());
         return responseModel;
     }
 
     @PostMapping("addCity")
-    public NewResponseModel addCity(@RequestBody AddressDTO address) {
-        NewResponseModel responseModel = NewResponseModel.Success();
+    public ResponseModel addCity(@RequestBody AddressDTO address) {
+        ResponseModel responseModel = ResponseModel.Success();
         addressService.saveCity(address);
         return responseModel;
     }

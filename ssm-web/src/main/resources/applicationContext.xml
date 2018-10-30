@@ -103,17 +103,8 @@
         <property name="isolationLevelName" value="ISOLATION_DEFAULT"/>
         <property name="propagationBehaviorName" value="PROPAGATION_REQUIRED"/>
     </bean>
-
-    <!--<bean id="mappingJackson2HttpMessageConverter"-->
-          <!--class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">-->
-        <!--<property name="objectMapper">-->
-            <!--<bean class="com.fasterxml.jackson.databind.ObjectMapper">-->
-                <!--<property name="dateFormat">-->
-                    <!--<bean class="java.text.SimpleDateFormat">-->
-                        <!--<constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss"/>-->
-                    <!--</bean>-->
-                <!--</property>-->
-            <!--</bean>-->
-        <!--</property>-->
-    <!--</bean>-->
+    <!--拦截-->
+    <mvc:interceptors>
+        <bean class="com.ssm.security.UserAuthFilter"/>
+    </mvc:interceptors>
 </beans>

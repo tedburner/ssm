@@ -8,9 +8,9 @@ import java.io.Serializable;
 /**
  * @author lingjun.jlj
  * @create 2017-11-23
- * https 数据返回包装
+ * https 数据返回包装类
  **/
-public class NewResponseModel<T> implements Serializable {
+public class ResponseModel<T> implements Serializable {
     private static final long serialVersionUID = -4688208407174044501L;
 
     private int status;
@@ -18,40 +18,40 @@ public class NewResponseModel<T> implements Serializable {
     private T data;
     private long timeStamp = System.currentTimeMillis();
 
-    public static <T> NewResponseModel<T> Success() {
-        return new NewResponseModel<>(ResponseCodeEnum.Success.getCode(), ResponseCodeEnum.Success.getMessage());
+    public static <T> ResponseModel<T> Success() {
+        return new ResponseModel<>(ResponseCodeEnum.Success.getCode(), ResponseCodeEnum.Success.getMessage());
     }
 
-    public static <T> NewResponseModel<T> ParamError(String info) {
-        return new NewResponseModel<T>(ResponseCodeEnum.PARAMETER_ERROR.getCode(), info);
+    public static <T> ResponseModel<T> ParamError(String info) {
+        return new ResponseModel<T>(ResponseCodeEnum.PARAMETER_ERROR.getCode(), info);
     }
 
-    public static <T> NewResponseModel<T> ParamError() {
-        return new NewResponseModel<T>(ResponseCodeEnum.PARAMETER_ERROR.getCode(), ResponseCodeEnum.PARAMETER_ERROR.getMessage());
+    public static <T> ResponseModel<T> ParamError() {
+        return new ResponseModel<T>(ResponseCodeEnum.PARAMETER_ERROR.getCode(), ResponseCodeEnum.PARAMETER_ERROR.getMessage());
     }
 
-    public static <T> NewResponseModel<T> Fail(String info) {
-        return new NewResponseModel<T>(ResponseCodeEnum.Fail.getCode(), StringUtils.defaultIfBlank(info, "请求失败"));
+    public static <T> ResponseModel<T> Fail(String info) {
+        return new ResponseModel<T>(ResponseCodeEnum.Fail.getCode(), StringUtils.defaultIfBlank(info, "请求失败"));
     }
 
-    public static <T> NewResponseModel<T> Fail() {
-        return new NewResponseModel<>(ResponseCodeEnum.Fail.getCode(), ResponseCodeEnum.Fail.getMessage());
+    public static <T> ResponseModel<T> Fail() {
+        return new ResponseModel<>(ResponseCodeEnum.Fail.getCode(), ResponseCodeEnum.Fail.getMessage());
     }
 
-    public NewResponseModel() {
+    public ResponseModel() {
 
     }
 
-    public NewResponseModel(int status) {
+    public ResponseModel(int status) {
         this.status = status;
     }
 
-    public NewResponseModel(int status, String info) {
+    public ResponseModel(int status, String info) {
         this.info = info;
         this.status = status;
     }
 
-    public NewResponseModel(ResponseCodeEnum responseCodeEnum) {
+    public ResponseModel(ResponseCodeEnum responseCodeEnum) {
         this.info = responseCodeEnum.getMessage();
         this.status = responseCodeEnum.getCode();
     }
