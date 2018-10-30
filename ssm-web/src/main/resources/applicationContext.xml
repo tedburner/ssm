@@ -103,7 +103,7 @@
         <property name="isolationLevelName" value="ISOLATION_DEFAULT"/>
         <property name="propagationBehaviorName" value="PROPAGATION_REQUIRED"/>
     </bean>
-
+    <!--拦截-->
     <mvc:interceptors>
         <bean class="com.ssm.security.UserAuthFilter"/>
     </mvc:interceptors>
