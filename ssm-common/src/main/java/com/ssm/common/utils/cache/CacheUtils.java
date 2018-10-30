@@ -28,7 +28,7 @@ public class CacheUtils {
         config.setMaxWaitMillis(1000);
         //在borrow一个jedis实例时，是否提前进行validate操作；如果为true，则得到的jedis实例均是可用的；
         config.setTestOnBorrow(false);
-        jedisPool = new JedisPool(config, "118.25.108.65", 6379, 10000, "redis1230908");
+        jedisPool = new JedisPool(config, "192.168.33.120", 6379, 10000, "redis123456");
     }
 
     /**
