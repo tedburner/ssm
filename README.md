@@ -1,7 +1,7 @@
 # SSM
 Spring + SpringMVC + MyBatis + Apollo。
 
-- 配置中心 Apollo：整合了携程的 Apollo 配置中心。启动时如图配置
+- 配置中心 Apollo：整合了携程的 Apollo 配置中心，启动时如图配置
 ![](/img/1540892049967.jpg)
 
 ## 项目结构简介
