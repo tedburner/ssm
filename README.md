@@ -14,7 +14,7 @@ Spring + SpringMVC + MyBatis + Apollo。
 ## Thanks
 - [mybatis-generator](https://gitee.com/rohou/mybatis-generator)：一个mybatis生成实体类，SQL的插件，感觉还不错，
 不过该插件不支持MySQL8，需要自己去修改源码生成新的插件。
-- [apollo](https://github.com/ctripcorp/apollo):Apollo（阿波罗）
+- [apollo](https://github.com/ctripcorp/apollo)：Apollo（阿波罗）
 是携程框架部门研发的分布式配置中心，能够集中化管理应用不同环境、
 不同集群的配置，配置修改后能够实时推送到应用端，并且具备规范的权限、
 流程治理等特性，适用于微服务配置管理场景。
