@@ -33,14 +33,12 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
         </dependency>
 
         <!--数据库相关 jar -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.11</version>
         </dependency>
         <dependency>
             <groupId>org.mybatis</groupId>
