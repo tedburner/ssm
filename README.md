@@ -11,6 +11,10 @@ Spring + SpringMVC + MyBatis + Apollo。
 - ssm-service:业务逻辑层，项目实现业务逻辑。
 - ssm-web:控制层，项目配置信息等都在这一层。
 
+## 环境
+- jdk 1.8
+- tomcat 8.5
+
 ## Thanks
 - [mybatis-generator](https://gitee.com/rohou/mybatis-generator)：一个mybatis生成实体类，SQL的插件，感觉还不错，
 不过该插件不支持MySQL8，需要自己去修改源码生成新的插件。
