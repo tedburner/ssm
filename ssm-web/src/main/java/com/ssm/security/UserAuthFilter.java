@@ -26,8 +26,6 @@ public class UserAuthFilter extends HandlerInterceptorAdapter {
     @Resource
     private UserMapper userMapper;
     @Autowired
-    private CacheUtils cacheUtils;
-    @Autowired
     private JedisSetService jedisSetService;
 
     public boolean preHandle(HttpServletRequest request,
