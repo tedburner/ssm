@@ -12,8 +12,9 @@ Spring + SpringMVC + MyBatis + Apollo。
 - ssm-web:控制层，项目配置信息等都在这一层。
 
 ## 环境
-- jdk 1.8
+- jdk 1.8 及以上
 - tomcat 8.5
+- maven
 
 ## Thanks
 - [mybatis-generator](https://gitee.com/rohou/mybatis-generator)：一个mybatis生成实体类，SQL的插件，感觉还不错，
