@@ -293,6 +293,13 @@
                 <version>1.4.8</version>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/org.redisson/redisson -->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>3.9.0</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
