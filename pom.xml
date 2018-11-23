@@ -263,16 +263,16 @@
                 <artifactId>javax.servlet-api</artifactId>
                 <version>3.1.0</version>
             </dependency>
-            <dependency>
-                <groupId>taglibs</groupId>
-                <artifactId>standard</artifactId>
-                <version>1.1.2</version>
-            </dependency>
-            <dependency>
-                <groupId>jstl</groupId>
-                <artifactId>jstl</artifactId>
-                <version>1.2</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>taglibs</groupId>-->
+                <!--<artifactId>standard</artifactId>-->
+                <!--<version>1.1.2</version>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+                <!--<groupId>jstl</groupId>-->
+                <!--<artifactId>jstl</artifactId>-->
+                <!--<version>1.2</version>-->
+            <!--</dependency>-->
 
             <!--redis-->
             <dependency>
@@ -291,13 +291,6 @@
                 <groupId>com.thoughtworks.xstream</groupId>
                 <artifactId>xstream</artifactId>
                 <version>1.4.8</version>
-            </dependency>
-
-            <!-- https://mvnrepository.com/artifact/org.redisson/redisson -->
-            <dependency>
-                <groupId>org.redisson</groupId>
-                <artifactId>redisson</artifactId>
-                <version>3.9.0</version>
             </dependency>
 
         </dependencies>
