@@ -17,7 +17,7 @@ public class Constants {
     public static final int APP_LOGIN_VALID = 30 * 24 * 60 * 60;
 
     /**
-     * 登录态cookic名称
+     * 登录态cookie名称
      */
     public final static String LOGIN_COOKIC_NAME = "User-Token";
 }
