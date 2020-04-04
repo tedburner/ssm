@@ -22,6 +22,8 @@ public interface AddressService {
 
     /**
      * 查询省份信息
+     *
+     * @return
      */
     List<ProvinceDO> findProvinceList();
 

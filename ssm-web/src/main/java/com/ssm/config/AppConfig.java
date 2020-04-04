@@ -9,6 +9,6 @@ import org.springframework.context.annotation.Configuration;
  * @description: 使得Apollo可以使用spring @Value 注解注入
  */
 @Configuration
-@EnableApolloConfig
+//@EnableApolloConfig
 public class AppConfig {
 }

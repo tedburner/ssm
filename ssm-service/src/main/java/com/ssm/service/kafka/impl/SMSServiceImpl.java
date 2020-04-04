@@ -1,7 +1,6 @@
 package com.ssm.service.kafka.impl;
 
 import com.ssm.common.kafka.ProduceService;
-import com.ssm.common.kafka.ProduceServiceImpl;
 import com.ssm.service.kafka.SMSService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,8 +14,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class SMSServiceImpl implements SMSService {
 
+    private final ProduceService produceService;
+
     @Autowired
-    private ProduceService produceService;
+    public SMSServiceImpl(ProduceService produceService) {
+        this.produceService = produceService;
+    }
 
     @Value(("${topic}"))
     private String topic;

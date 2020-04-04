@@ -28,6 +28,7 @@ public class UserAuthFilter extends HandlerInterceptorAdapter {
     @Autowired
     private JedisSetService jedisSetService;
 
+    @Override
     public boolean preHandle(HttpServletRequest request,
                              HttpServletResponse response,
                              Object handler) throws Exception {
@@ -36,9 +37,9 @@ public class UserAuthFilter extends HandlerInterceptorAdapter {
         //不拦截的URI
         String notFilter = "/user/";
         //是否过滤
-        boolean doFilter = !uri.contains(notFilter);
+        //boolean doFilter = !uri.contains(notFilter);
 
-        if (doFilter) {
+        if (false) {
             String token = "";
             String phone = "";
             String msg = "请重新登录";

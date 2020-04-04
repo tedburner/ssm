@@ -1,7 +1,6 @@
 package com.ssm.web.controller;
 
 import com.ssm.common.utils.http.ResponseModel;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,13 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class ApolloController {
 
 
-    @Value("${timeout}")
-    private Integer timeout;
+//    @Value("${timeout}")
+//    private Integer timeout;
 
     @GetMapping(value = "timeout")
     public ResponseModel timeout() {
         ResponseModel responseModel = ResponseModel.Success();
-        responseModel.setData("获取超时时间：" + String.valueOf(timeout));
+        responseModel.setData("获取超时时间：" + System.currentTimeMillis());
         return responseModel;
     }
 }

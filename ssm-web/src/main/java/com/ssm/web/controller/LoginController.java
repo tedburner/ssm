@@ -18,13 +18,18 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping(value = "/user/")
 public class LoginController {
 
+    private final LoginService loginService;
+
     @Autowired
-    private LoginService loginService;
+    public LoginController(LoginService loginService) {
+        this.loginService = loginService;
+    }
 
     @PostMapping(value = "login")
-    public ResponseModel  login(HttpServletRequest request){
+    public ResponseModel login(HttpServletRequest request) {
         ResponseModel responseModel = ResponseModel.Success();
 
+        responseModel.setData("123456");
         return responseModel;
     }
 

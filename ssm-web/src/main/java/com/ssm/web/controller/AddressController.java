@@ -5,6 +5,7 @@ import com.ssm.model.dto.AddressDTO;
 import com.ssm.service.AddressService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,11 +22,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/address/")
 public class AddressController {
 
+    private final AddressService addressService;
+
     @Autowired
-    private AddressService addressService;
+    public AddressController(AddressService addressService) {
+        this.addressService = addressService;
+    }
 
 
-    @RequestMapping(value = "getProvince", method = RequestMethod.GET)
+    @GetMapping(value = "getProvince")
     public ResponseModel getProvince() {
         ResponseModel responseModel = ResponseModel.Success();
         responseModel.setData(addressService.findProvinceList());
@@ -33,7 +38,7 @@ public class AddressController {
         return responseModel;
     }
 
-    @RequestMapping(value = "getCity", method = RequestMethod.GET)
+    @GetMapping(value = "getCity")
     public ResponseModel getCity(Long provinceId) {
         ResponseModel responseModel = ResponseModel.Success();
         responseModel.setData(addressService.findCityList(provinceId));

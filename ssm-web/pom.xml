@@ -14,7 +14,6 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <disconf.version>2.6.36</disconf.version>
     </properties>
 
     <dependencies>
