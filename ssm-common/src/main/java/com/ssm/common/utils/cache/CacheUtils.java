@@ -1,6 +1,6 @@
 package com.ssm.common.utils.cache;
 
-import com.google.gson.Gson;
+import com.ssm.common.utils.common.FormatUtils;
 import org.springframework.stereotype.Component;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
@@ -103,8 +103,7 @@ public class CacheUtils {
      */
     public <T> void set(String field, String key, T value, int expireTime) {
         Jedis jedis = getJedis();
-        Gson gson = new Gson();
-        String valueGson = gson.toJson(value);
+        String valueGson = FormatUtils.obj2str(value);
         jedis.setex(rawKey(field, key), expireTime, valueGson);
         jedis.expire(key, expireTime);
     }
