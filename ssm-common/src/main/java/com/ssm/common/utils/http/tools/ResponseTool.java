@@ -1,6 +1,6 @@
 package com.ssm.common.utils.http.tools;
 
-import com.alibaba.fastjson.JSON;
+import com.ssm.common.utils.common.FormatUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -72,7 +72,7 @@ public class ResponseTool {
     private static final void writeObjectToResponseByJson(Object o, HttpServletResponse response) {
         response.setContentType("application/json");
         response.setCharacterEncoding("utf-8");
-        String s = JSON.toJSONString(o);
+        String s = FormatUtils.obj2str(o);
         logger.info("the return json = " + s);
         try {
             response.getWriter().write(s);
@@ -93,7 +93,7 @@ public class ResponseTool {
     private static final void writeObjectToResponseByJsonP(Object o, HttpServletResponse response, String callBack) {
         response.setContentType("application/json");
         response.setCharacterEncoding("utf-8");
-        String s = JSON.toJSONString(o);
+        String s = FormatUtils.obj2str(o);
         logger.info("the return json = " + s);
         try {
             response.getWriter().write(callBack == null ? s : (callBack + "(" + s + ");"));

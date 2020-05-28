@@ -1,7 +1,8 @@
 package com.ssm.service.cache.impl;
 
-import com.alibaba.fastjson.JSONObject;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.ssm.common.utils.cache.CacheUtils;
+import com.ssm.common.utils.common.FormatUtils;
 import com.ssm.model.DO.UserDO;
 import com.ssm.service.cache.JedisSetService;
 import lombok.extern.slf4j.Slf4j;
@@ -17,8 +18,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class JedisSetServiceImpl implements JedisSetService {
 
+    private final CacheUtils cacheUtils;
+
     @Autowired
-    private CacheUtils cacheUtils;
+    public JedisSetServiceImpl(CacheUtils cacheUtils) {
+        this.cacheUtils = cacheUtils;
+    }
 
     @Override
     public String loadFPhoneForToKen(String field, String key) {
@@ -28,8 +33,9 @@ public class JedisSetServiceImpl implements JedisSetService {
             Long ttlTime = cacheUtils.ttl(field, key);
             if (ttlTime > 0) {
                 String userInfo = cacheUtils.get(field, key);
-                UserDO userDO = JSONObject.toJavaObject(
-                        JSONObject.parseObject(userInfo), UserDO.class);
+                TypeReference<UserDO> type = new TypeReference<UserDO>() {
+                };
+                UserDO userDO = FormatUtils.str2obj(userInfo, type);
                 return userDO.getPhone();
             }
         } catch (Exception e) {
